@@ -93,14 +93,18 @@ class Router
      */
     private function parseUri($uri)
     {
-        $roots = explode('/', $uri);
+        /*$roots = explode('/', $uri);
         $request = explode('/', $this->request);
         $indexOf = strpos($uri, '{');
+
+        print_r($request);
+
 
         if ($indexOf !== false) {
             $split = substr($uri, 0, $indexOf);
             $uri = substr($split, 0, strlen($split)-1);
         }
+
 
         if (substr($uri, strlen($uri)-1, 1) === '/' && strlen($uri) > 1) {
             $uri = substr($uri, 0, sizeof($uri)-1);
@@ -110,7 +114,7 @@ class Router
             if (strpos($item, '{') !== false) {
                 $this->argv[$key] = $request[$key];
             }
-        }
+        }*/
 
         return $uri;
     }
@@ -138,15 +142,21 @@ class Router
      */
     public function hasRoute($uri = '/')
     {
-        return array_key_exists($uri, $this->routes);
+        $argv = Array();
+        $requestList = explode('/', $uri);
 
-        foreach ($this->routes as $key => $item) {
-            if (strpos($uri, $key) !== false) {
-                return $key;
+        for ($i = sizeof($requestList); $i > 0; $i--) {
+
+            $slice = array_slice($requestList, sizeof($requestList)-$i);
+
+            print_r($slice);
+
+            if (array_key_exists('/'.$requestList[$i], $this->routes)) {
+
             }
         }
 
-        return false;
+        return array_key_exists($uri, $this->routes);
     }
 
     /**
@@ -154,6 +164,8 @@ class Router
      */
     public function run()
     {
+        print_r($this->routes);
+
         if ($this->hasRoute($this->request)) {
             $split = explode('.', $this->routes[$this->request]);
 

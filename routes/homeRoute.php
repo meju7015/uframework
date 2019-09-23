@@ -9,4 +9,6 @@ $homeRouter = new Router($_SERVER);
 
 $homeRouter
     ->addRoute('/', 'home.index')
-    ->run();
+    ->addRoute('/{index}', 'home.index');
+
+$homeRouter->run();

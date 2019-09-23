@@ -7,11 +7,13 @@
  */
 class Home extends Controller
 {
-    public function index()
+    public function index($params)
     {
         $viewData = Array(
             'test' => 'test'
         );
+
+        echo $params;
 
         $this->view
             ->loadView('home', 'index', $viewData)
