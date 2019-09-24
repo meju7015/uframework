@@ -8,16 +8,23 @@
 class Model
 {
     /**
-     * ÃÖ»óÀ§ ·çÆ®
+     * PDO °´Ã¼
      * 
-     * @var 
+     * @var PDO 
+     */
+    protected $connect;
+
+    /**
+     * ÃÖ»óÀ§ ·çÆ®
+     *
+     * @var
      */
     protected $rootDir;
 
     /**
      * Äõ¸®ºô´õ Object
-     * 
-     * @var QueryBuilder 
+     *
+     * @var QueryBuilder
      */
     public $builder;
 
@@ -25,11 +32,24 @@ class Model
     {
         $this->builder = new QueryBuilder();
         $this->rootDir = Config::getRootDir();
+
+        $dbInfo = DBConfig::getDatabaseInfo();
+
+        try {
+            $this->connect = new PDO(
+                $dbInfo->dsn,
+                $dbInfo->userName,
+                $dbInfo->password
+            );
+        } catch (PDOException $e) {
+            $viewException = new ModelException($e->getMessage(), 500);
+            $viewException->display();
+        }
     }
 
     /**
      * ¸ðµ¨ ·Îµå
-     * 
+     *
      * @param string    $model
      * @return Object|false
      * @throws ModelException

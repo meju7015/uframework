@@ -58,6 +58,10 @@ class Router
         $this->rootDir = Config::getRootDir();
         $this->request = $request['REQUEST_URI'];
         $this->debug = $debug;
+
+        if ($debug === true) {
+            $this->setDebug();
+        }
     }
 
     /**

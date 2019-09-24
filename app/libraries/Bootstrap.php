@@ -12,6 +12,7 @@ class BootStrap
     public function __construct()
     {
         $this->rootDir = Config::getRootDir();
+        DBConfig::setDatabaseInfo(LOCAL_CHANEL);
     }
 
     private function loadRouter()

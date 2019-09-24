@@ -3,13 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8fcae2d5-1568-499e-8079-e68cf823aa19" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/configure/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/configure/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/libraries/Bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/libraries/Bootstrap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/basic/exception/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/basic/exception/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/basic/exception/405.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/basic/exception/405.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/homeRoute.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/homeRoute.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +50,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="coverage" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -89,7 +87,7 @@
       <workItem from="1568937835094" duration="22450000" />
       <workItem from="1569200957010" duration="9231000" />
       <workItem from="1569296356175" duration="1846000" />
-      <workItem from="1569299889677" duration="4286000" />
+      <workItem from="1569299889677" duration="9082000" />
     </task>
     <task id="LOCAL-00001" summary="컨트롤러 인터페이스 정의">
       <created>1569296447436</created>
@@ -112,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569302246555</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="readme">
+      <created>1569306793537</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1569306793537</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +140,7 @@
     <MESSAGE value="컨트롤러 인터페이스 정의" />
     <MESSAGE value="404/405 Exception view" />
     <MESSAGE value="ViewException" />
-    <option name="LAST_COMMIT_MESSAGE" value="ViewException" />
+    <MESSAGE value="readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme" />
   </component>
 </project>

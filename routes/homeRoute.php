@@ -5,7 +5,7 @@
  * Date: 2019-09-20
  * Time: ¿ÀÈÄ 3:58
  */
-$homeRouter = new Router($_SERVER);
+$homeRouter = new Router($_SERVER, true);
 
 $homeRouter
     ->get('/', 'home.index')
