@@ -18,10 +18,10 @@ class ModelException extends Exception implements Exceptions
     public function display()
     {
         $view = new View();
+        $view->loadView('exception', $this->getCode(), Array(
+            'msg' => $this->getMessage()
+        ))->display();
 
-        echo "<pre style='position:relative; top:0; z-index:999999; background: black;color: greenyellow'>";
-        print_r($this->getMessage());
-        echo "</pre>";
         exit;
     }
 

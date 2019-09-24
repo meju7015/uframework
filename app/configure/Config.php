@@ -7,6 +7,7 @@
  */
 class Config
 {
+    const DEBUG                     = false;
     const APPLICATION_NAME          = 'uframework';
     const DEFAULT_SITE              = '/';
     const DEFAULT_TITLE             = 'uFramework';

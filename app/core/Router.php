@@ -93,29 +93,6 @@ class Router
      */
     private function parseUri($uri)
     {
-        /*$roots = explode('/', $uri);
-        $request = explode('/', $this->request);
-        $indexOf = strpos($uri, '{');
-
-        print_r($request);
-
-
-        if ($indexOf !== false) {
-            $split = substr($uri, 0, $indexOf);
-            $uri = substr($split, 0, strlen($split)-1);
-        }
-
-
-        if (substr($uri, strlen($uri)-1, 1) === '/' && strlen($uri) > 1) {
-            $uri = substr($uri, 0, sizeof($uri)-1);
-        }
-
-        foreach ($roots as $key => $item) {
-            if (strpos($item, '{') !== false) {
-                $this->argv[$key] = $request[$key];
-            }
-        }*/
-
         return $uri;
     }
 
@@ -129,7 +106,10 @@ class Router
     public function addRoute($uri, $controller)
     {
         $parseUri = $this->parseUri($uri);
-        $this->routes[$parseUri] =  $controller;
+        $this->routes[$parseUri] = Array(
+            'method'     => 'get',
+            'controller' => $controller
+        );
 
         return $this;
     }
@@ -142,21 +122,27 @@ class Router
      */
     public function hasRoute($uri = '/')
     {
-        $argv = Array();
         $requestList = explode('/', $uri);
 
-        for ($i = sizeof($requestList); $i > 0; $i--) {
+        for ($i = 0; $i < sizeof($requestList); $i++) {
 
-            $slice = array_slice($requestList, sizeof($requestList)-$i);
+            $slice = array_slice($requestList, 0, sizeof($requestList)-$i);
+            $sliceString = implode('/', $slice);
 
-            print_r($slice);
+            if ($sliceString[0] !== '/') {
+                $sliceString = '/'.$sliceString;
+            }
 
-            if (array_key_exists('/'.$requestList[$i], $this->routes)) {
+            if ($key = array_key_exists($sliceString, $this->routes)) {
+                for ($q = (int)$key; $q < sizeof($requestList); $q++) {
+                    $this->argv[] = $requestList[$q];
+                }
 
+                return $this->routes[$sliceString];
             }
         }
 
-        return array_key_exists($uri, $this->routes);
+        return false;
     }
 
     /**
@@ -164,17 +150,30 @@ class Router
      */
     public function run()
     {
-        print_r($this->routes);
-
-        if ($this->hasRoute($this->request)) {
-            $split = explode('.', $this->routes[$this->request]);
+        if ($router = $this->hasRoute($this->request)) {
+            $split = explode('.', $router['controller']);
 
             if (file_exists($this->rootDir."/app/controllers/{$split[0]}.controller.php")) {
                 include_once $this->rootDir."/app/controllers/{$split[0]}.controller.php";
 
+                if (strtoupper($router['method']) !== $_SERVER['REQUEST_METHOD']) {
+                    throw new RouteException('not found method', 405);
+                }
+
+                $methodArgv = $_GET;
+
+                switch ($router['method']) {
+                    case OAUTH_HTTP_METHOD_GET :
+                        $methodArgv = $_GET;
+                        break;
+                    case OAUTH_HTTP_METHOD_POST :
+                        $methodArgv = $_POST;
+                        break;
+                }
+
                 $controller = new $split[0];
                 if (method_exists($controller, $split[1])) {
-                    $controller->$split[1]($this->argv);
+                    $controller->$split[1]($methodArgv, $this->argv);
                 } else {
                     throw new RouteException('not found method', 405);
                 }
@@ -182,5 +181,42 @@ class Router
                 throw new RouteException('not found class', 405);
             }
         }
+    }
+
+    public function get($uri, $controller)
+    {
+        $parseUri = $this->parseUri($uri);
+
+        $this->routes[$parseUri] =  Array(
+            'method'     => 'get',
+            'controller' => $controller
+        );
+
+        return $this;
+    }
+
+    public function post($uri, $controller)
+    {
+        $parseUri = $this->parseUri($uri);
+
+        $this->routes[$parseUri] = Array(
+            'method'     => 'post',
+            'controller' => $controller
+        );
+    }
+
+    public function put()
+    {
+
+    }
+
+    public function delete()
+    {
+
+    }
+
+    public function option()
+    {
+
     }
 }

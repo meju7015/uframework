@@ -1,19 +1,14 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: admin
- * Date: 2019-09-19
- * Time: 오후 5:37
+ * 사용자 정의 컨트롤러
  */
 class Home extends Controller
 {
-    public function index($params)
+    public function index($request, $params)
     {
         $viewData = Array(
             'test' => 'test'
         );
-
-        echo $params;
 
         $this->view
             ->loadView('home', 'index', $viewData)
