@@ -54,25 +54,23 @@ class View
      */
     public function __construct()
     {
+        $this->theme = Config::DEFAULT_THEME;
+        $this->template = Config::DEFAULT_TEMPLATE;
+        $this->rootDir = Config::getRootDir();
+
         $this->head = Array(
             'title' => Config::DEFAULT_TITLE,
             'meta'  => Array(
                 'description' => Config::DEFAULT_DESCRIPTION
             ),
-            'js'    => Array(
-                'jquery'    => '/resources/assets/jquery/jquery/jquery-3.4.1.min.js',
-                'bootstrap'  => '/resources/assets/bootstrap/js/bootstrap.bundle.js'
+            'js' => Array(
+                'jquery' => '/js/jquery/jquery-3.4.1.min.js',
+                'bootstrap' => '/js/bootstrap/bootstrap.bundle.js'
             ),
-            'css'   => Array(
-                'bootstrap' => '/resources/assets/bootstrap/css/bootstrap.css',
-                'bootstrap-grid' => '/resources/assets/bootstrap/css/bootstrap-grid.css',
-                'bootstrap-reboot' => '/resources/assets/bootstrap/css/bootstrap-reboot.css'
+            'css' => Array(
+                'bootstrap' => '/css/bootstrap/bootstrap.min.css'
             )
         );
-
-        $this->theme = Config::DEFAULT_THEME;
-        $this->template = Config::DEFAULT_TEMPLATE;
-        $this->rootDir = Config::getRootDir();
 
         $this->data = Array(
             'head' => $this->head,

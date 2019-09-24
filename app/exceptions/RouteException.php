@@ -18,10 +18,13 @@ class RouteException extends Exception implements Exceptions
     public function display()
     {
         $view = new View();
-        $view->loadView('exception', $this->getCode(), Array(
-            'msg' => $this->getMessage()
-        ))->display();
-
+        $view->loadView(
+            'exception',
+            $this->getCode(),
+            Array(
+                'msg' => $this->getMessage()
+            )
+        )->display();
         exit;
     }
 

@@ -175,10 +175,10 @@ class Router
                 if (method_exists($controller, $split[1])) {
                     $controller->$split[1]($methodArgv, $this->argv);
                 } else {
-                    throw new RouteException('not found method', 405);
+                    throw new RouteException('Method 를 찾을 수 없습니다.', 405);
                 }
             } else {
-                throw new RouteException('not found class', 405);
+                throw new RouteException('Controller class 를 찾을 수 없습니다.', 405);
             }
         }
     }
