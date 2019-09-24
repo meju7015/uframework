@@ -60,11 +60,13 @@ class View
                 'description' => Config::DEFAULT_DESCRIPTION
             ),
             'js'    => Array(
-                'jquery'    => '',
-                'jqueryUI'  => ''
+                'jquery'    => '/resources/assets/jquery/jquery/jquery-3.4.1.min.js',
+                'bootstrap'  => '/resources/assets/bootstrap/js/bootstrap.bundle.js'
             ),
             'css'   => Array(
-                'bootstrap' => ''
+                'bootstrap' => '/resources/assets/bootstrap/css/bootstrap.css',
+                'bootstrap-grid' => '/resources/assets/bootstrap/css/bootstrap-grid.css',
+                'bootstrap-reboot' => '/resources/assets/bootstrap/css/bootstrap-reboot.css'
             )
         );
 
