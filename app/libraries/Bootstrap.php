@@ -56,7 +56,7 @@ class BootStrap
         return $this;
     }
 
-    public function run()
+    public function wakeUp()
     {
         $this
             ->autoLoad()

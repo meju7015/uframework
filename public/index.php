@@ -10,4 +10,4 @@ include_once "../app/libraries/Bootstrap.php";
 
 $BootStrap = new BootStrap();
 
-$BootStrap->run();
+$BootStrap->wakeUp();

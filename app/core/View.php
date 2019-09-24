@@ -59,7 +59,7 @@ class View
         $this->rootDir = Config::getRootDir();
 
         $this->head = Array(
-            'title' => Config::DEFAULT_TITLE,
+            'title' => Config::APPLICATION_NAME,
             'meta'  => Array(
                 'description' => Config::DEFAULT_DESCRIPTION
             ),

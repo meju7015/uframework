@@ -10,7 +10,6 @@ class Config
     const DEBUG                     = false;
     const APPLICATION_NAME          = 'uframework';
     const DEFAULT_SITE              = '/';
-    const DEFAULT_TITLE             = 'uFramework';
     const DEFAULT_DESCRIPTION       = 'uFramework v1.0';
     const DEFAULT_THEME             = 'basic';
     const DEFAULT_TEMPLATE          = 'html';
