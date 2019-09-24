@@ -2,7 +2,7 @@
 /**
  * 사용자 정의 컨트롤러
  */
-class Home extends Controller
+class Home extends Controller implements Controllable
 {
     public function index($request, $params)
     {
