@@ -14,4 +14,11 @@ class Home extends Controller implements Controllable
             ->loadView('home', 'index', $viewData)
             ->display();
     }
+
+    public function homes($request, $params)
+    {
+        $this->view
+            ->loadView('home', 'home')
+            ->display();
+    }
 }

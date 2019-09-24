@@ -1,6 +1,6 @@
 <?php
 /**
- * ºä Exception
+ * ¶ó¿ìÆ® Exception
  */
 class ViewException extends Exception implements Exceptions
 {
@@ -8,7 +8,7 @@ class ViewException extends Exception implements Exceptions
     {
         parent::__construct($message, $code);
 
-        if ($this->getCode() === 404) {
+        if (Config::DEBUG && $this->getCode() === 404) {
             $this->loadMain();
         }
 
@@ -17,9 +17,14 @@ class ViewException extends Exception implements Exceptions
 
     public function display()
     {
-        echo "<pre style='position:relative; top:0; z-index:999999; background: black;color: greenyellow'>";
-        print_r($this->getMessage());
-        echo "</pre>";
+        $view = new View();
+        $view->loadView(
+            'exception',
+            $this->getCode(),
+            Array(
+                'msg' => $this->getMessage()
+            )
+        )->display();
         exit;
     }
 

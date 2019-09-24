@@ -107,7 +107,7 @@ class View
 
             return $this;
         } else {
-            throw new ViewException('not found view file', 405);
+            throw new ViewException('뷰 파일을 찾을 수 없습니다. EndPoint 를 확인하세요.', 405);
         }
     }
 

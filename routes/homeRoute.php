@@ -9,7 +9,7 @@ $homeRouter = new Router($_SERVER);
 
 $homeRouter
     ->get('/', 'home.index')
-    ->get('/home', 'home.home')
+    ->get('/homes', 'home.homes')
     ->get('/blog', 'home.blog');
 
 $homeRouter->run();
