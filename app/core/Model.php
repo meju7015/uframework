@@ -30,7 +30,6 @@ class Model
 
     public function __construct()
     {
-        $this->builder = new QueryBuilder();
         $this->rootDir = Config::getRootDir();
 
         $dbInfo = DBConfig::getDatabaseInfo();
@@ -41,6 +40,9 @@ class Model
                 $dbInfo->userName,
                 $dbInfo->password
             );
+
+            $this->builder = new QueryBuilder($this->connect);
+
         } catch (PDOException $e) {
             $viewException = new ModelException($e->getMessage(), 500);
             $viewException->display();
@@ -56,12 +58,13 @@ class Model
      */
     public function loadModel($model)
     {
-        $modelFile = "{$this->rootDir}/models/{$model}.php";
+        $modelFile = "{$this->rootDir}app/models/{$model}.php";
 
         if (file_exists($modelFile)) {
+            include_once $modelFile;
             return new $model();
         } else {
-            throw new ModelException('not found model file', 405);
+            throw new ModelException('모델 파일을 찾을 수 없습니다.', 405);
         }
     }
 }

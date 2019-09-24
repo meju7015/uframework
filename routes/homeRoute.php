@@ -8,8 +8,8 @@
 $homeRouter = new Router($_SERVER, true);
 
 $homeRouter
-    ->get('/', 'home.index')
-    ->get('/homes', 'home.homes')
-    ->get('/blog', 'home.blog');
+    ->get('/', 'HomeController.index')
+    ->get('/homes', 'HomeController.homes')
+    ->get('/blog', 'HomeController.blog');
 
 $homeRouter->run();

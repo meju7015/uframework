@@ -157,8 +157,8 @@ class Router
         if ($router = $this->hasRoute($this->request)) {
             $split = explode('.', $router['controller']);
 
-            if (file_exists($this->rootDir."/app/controllers/{$split[0]}.controller.php")) {
-                include_once $this->rootDir."/app/controllers/{$split[0]}.controller.php";
+            if (file_exists($this->rootDir."/app/controllers/{$split[0]}.php")) {
+                include_once $this->rootDir."/app/controllers/{$split[0]}.php";
 
                 if (strtoupper($router['method']) !== $_SERVER['REQUEST_METHOD']) {
                     throw new RouteException('not found method', 405);
