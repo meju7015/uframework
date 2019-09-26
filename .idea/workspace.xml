@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8fcae2d5-1568-499e-8079-e68cf823aa19" name="Default Changelist" comment="QueryBuilder start">
+    <list default="true" id="8fcae2d5-1568-499e-8079-e68cf823aa19" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/home.controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/interface/Controllable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/interface/Controllable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/interface/DataOutput.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/interface/DataOutput.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/interface/Exceptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/interface/Exceptions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/libraries/QueryBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/libraries/QueryBuilder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/homeRoute.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/homeRoute.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -92,7 +84,7 @@
       <workItem from="1568937835094" duration="22450000" />
       <workItem from="1569200957010" duration="9231000" />
       <workItem from="1569296356175" duration="1846000" />
-      <workItem from="1569299889677" duration="12364000" />
+      <workItem from="1569299889677" duration="16254000" />
     </task>
     <task id="LOCAL-00001" summary="컨트롤러 인터페이스 정의">
       <created>1569296447436</created>
@@ -129,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569312386075</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="XMLHttpRequest, Model, Router, Exception">
+      <created>1569315814505</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1569315814505</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +153,7 @@
     <MESSAGE value="ViewException" />
     <MESSAGE value="readme" />
     <MESSAGE value="Model PDO Connector" />
-    <option name="LAST_COMMIT_MESSAGE" value="Model PDO Connector" />
+    <MESSAGE value="XMLHttpRequest, Model, Router, Exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="XMLHttpRequest, Model, Router, Exception" />
   </component>
 </project>

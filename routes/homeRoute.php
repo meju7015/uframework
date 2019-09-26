@@ -10,6 +10,7 @@ $homeRouter = new Router($_SERVER, true);
 $homeRouter
     ->get('/', 'HomeController.index')
     ->get('/homes', 'HomeController.homes')
-    ->get('/blog', 'HomeController.blog');
+    ->get('/blog', 'HomeController.blog')
+    ->post('/api', 'HomeController.index');
 
 $homeRouter->run();
