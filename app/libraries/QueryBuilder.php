@@ -54,7 +54,7 @@ class QueryBuilder
 
         try {
             if (empty($this->table) || $this->table === ' ') {
-                throw new PDOException('테이블이 입력되지 않았습니다.');
+                throw new PDOException('테이블이 입력되지 않았습니다.', 500);
             }
 
             $where = "";
@@ -67,11 +67,13 @@ class QueryBuilder
                 $where .= "(" . implode(' AND ', $this->and) . ")";
             }
 
-            echo $where;
-
-
         } catch (PDOException $e) {
-            $viewException = new ModelException($e->getMessage(), 500);
+            $viewException = new ModelException(
+                $e->getMessage(),
+                $e->getCode(),
+                "QueryBuilder 클래스의 table 생성 규칙을 참조하세요."
+            );
+
             $viewException->display();
         }
 

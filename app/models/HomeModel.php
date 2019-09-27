@@ -7,7 +7,7 @@ class HomeModel extends Model
     public function selectUsers($userID)
     {
         $this->builder
-            ->table('Users')
+            //->table('Users')
             ->column(
                 Array(
                     'User',

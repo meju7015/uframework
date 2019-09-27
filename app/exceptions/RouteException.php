@@ -4,15 +4,24 @@
  */
 class RouteException extends Exception implements Exceptions
 {
-    public function __construct($message = "", $code = 0)
+    protected $hint;
+
+    public function __construct($message = "", $code = 0, $hint = "")
     {
         parent::__construct($message, $code);
+
+        $this->hint = $hint;
 
         if (Config::DEBUG && $this->getCode() === 404) {
             $this->loadMain();
         }
 
         $this->display();
+    }
+
+    public function getHint()
+    {
+        return $this->hint;
     }
 
     public function display()
@@ -22,7 +31,10 @@ class RouteException extends Exception implements Exceptions
             'exception',
             $this->getCode(),
             Array(
-                'msg' => $this->getMessage()
+                'msg'   => $this->message,
+                'code'  => $this->code,
+                'trace' => $this->getTrace(),
+                'hint'  => $this->hint
             )
         )->display();
         exit;

@@ -3,11 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="8fcae2d5-1568-499e-8079-e68cf823aa19" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/configure/DBConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/configure/DBConfig.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/configure/Static.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/configure/Static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/exceptions/ModelException.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/exceptions/ModelException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/exceptions/RouteException.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/exceptions/RouteException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/exceptions/ViewException.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/exceptions/ViewException.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/libraries/QueryBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/libraries/QueryBuilder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/HomeModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/HomeModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/basic/exception/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/basic/exception/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/basic/exception/405.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/basic/exception/405.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/basic/exception/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/basic/exception/500.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +40,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/dist" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -49,11 +53,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\web\uframework\app\libraries" />
       <recent name="C:\web\uframework\public\css\bootstrap" />
       <recent name="C:\web\uframework\public\js\bootstrap" />
       <recent name="C:\web\uframework\public\js\jquery" />
       <recent name="C:\web\uframework\public\css" />
-      <recent name="C:\web\uframework\public\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -85,7 +89,7 @@
       <workItem from="1569299889677" duration="16254000" />
       <workItem from="1569458993713" duration="508000" />
       <workItem from="1569459535500" duration="2219000" />
-      <workItem from="1569543517071" duration="3430000" />
+      <workItem from="1569543517071" duration="13286000" />
     </task>
     <task id="LOCAL-00001" summary="컨트롤러 인터페이스 정의">
       <created>1569296447436</created>
@@ -136,11 +140,28 @@
       <option name="project" value="LOCAL" />
       <updated>1569459140707</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="데이터베이스 커넥터에 마스터와 슬레이브 추가.">
+      <created>1569550661597</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1569550661597</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -162,6 +183,7 @@
     <MESSAGE value="readme" />
     <MESSAGE value="Model PDO Connector" />
     <MESSAGE value="XMLHttpRequest, Model, Router, Exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="XMLHttpRequest, Model, Router, Exception" />
+    <MESSAGE value="데이터베이스 커넥터에 마스터와 슬레이브 추가." />
+    <option name="LAST_COMMIT_MESSAGE" value="데이터베이스 커넥터에 마스터와 슬레이브 추가." />
   </component>
 </project>

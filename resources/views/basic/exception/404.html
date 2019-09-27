@@ -27,8 +27,12 @@
                 <h4>Trace</h4>
                 <hr>
                 <p>
-                    Error Code : 404 (Not found)<br>
-                    Not found routes or route files. You have a hint!
+                    Error Code : <?=$code?><br>
+                    <pre>
+                    <?=print_r($trace)?><br>
+                    </pre>
+                    <hr>
+                    you have hint!
                 </p>
             </div>
         </div>
@@ -38,9 +42,7 @@
                 <h4>Hint</h4>
                 <hr>
                 <p>
-                    라우터를 생성하고, 컨트롤러 메소드를 생성하세요.<br>
-                    라우터를 생성할때 HTTP 메소드에따라 구분할수 있습니다.<br>
-                    또한 컨트롤러를 생성할때는 반드시 Controllable Interface 를 implement 하세요.
+                    <?=$hint?>
                 </p>
             </div>
         </div>
