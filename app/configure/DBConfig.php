@@ -4,31 +4,63 @@ class DBConfig
     static $DATABASE_INFO = '';
 
     static $PRODUCT_INFO = Array(
-        'dsn'  => 'mysql:host=localhost',
-        'userName'  => 'root',
-        'password'  => '1234',
-        'options'   => null
+        'master'  => Array(
+            'dsn'  => 'mysql:host=localhost',
+            'userName'  => 'root',
+            'password'  => '1234',
+            'options'   => null
+        ),
+        'slave' => Array(
+            'dsn'  => 'mysql:host=localhost',
+            'userName'  => 'root',
+            'password'  => '1234',
+            'options'   => null
+        )
     );
 
     static $DEVELOP_INFO = Array(
-        'dsn'  => 'mysql:host=localhost',
-        'userName'  => 'root',
-        'password'  => '1234',
-        'options'   => null
+        'master'  => Array(
+            'dsn'  => 'mysql:host=localhost',
+            'userName'  => 'root',
+            'password'  => '1234',
+            'options'   => null
+        ),
+        'slave' => Array(
+            'dsn'  => 'mysql:host=localhost',
+            'userName'  => 'root',
+            'password'  => '1234',
+            'options'   => null
+        )
     );
 
     static $QA_INFO = Array(
-        'dsn'  => 'mysql:host=localhost',
-        'userName'  => 'root',
-        'password'  => '1234',
-        'options'   => null
+        'master'  => Array(
+            'dsn'  => 'mysql:host=localhost',
+            'userName'  => 'root',
+            'password'  => '1234',
+            'options'   => null
+        ),
+        'slave' => Array(
+            'dsn'  => 'mysql:host=localhost',
+            'userName'  => 'root',
+            'password'  => '1234',
+            'options'   => null
+        )
     );
 
     static $LOCAL_INFO = Array(
-        'dsn'  => 'mysql:host=localhost',
-        'userName'  => 'root',
-        'password'  => '1234',
-        'options'   => null
+        'master'  => Array(
+            'dsn'  => 'mysql:host=localhost',
+            'userName'  => 'root',
+            'password'  => '1234',
+            'options'   => null
+        ),
+        'slave' => Array(
+            'dsn'  => 'mysql:host=localhost',
+            'userName'  => 'root',
+            'password'  => '1234',
+            'options'   => null
+        )
     );
 
     public static function setDatabaseInfo($chanel = PRODUCT_CHANEL)
@@ -50,6 +82,6 @@ class DBConfig
 
     public static function getDatabaseInfo()
     {
-        return (object)self::$DATABASE_INFO;
+        return self::$DATABASE_INFO;
     }
 }

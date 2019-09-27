@@ -35,15 +35,23 @@ class Model
         $dbInfo = DBConfig::getDatabaseInfo();
 
         try {
-            $this->connect = new PDO(
-                $dbInfo->dsn,
-                $dbInfo->userName,
-                $dbInfo->password
-            );
+            if (is_array($dbInfo)) {
+                foreach ($dbInfo as $key => $item) {
+                    $this->connect[$key] = new PDO(
+                        $item['dsn'],
+                        $item['userName'],
+                        $item['password']
+                    );
+                }
+            } else {
+                throw new PDOException('error', 500);
+            }
 
-            $this->builder = new QueryBuilder($this->connect);
+            $this->builder = new QueryBuilder((object)$this->connect);
 
         } catch (PDOException $e) {
+            // TODO :: slave key 가 connection 이 안되어있으면 select query 를 master로 보내고 로그를 쌓는다.
+
             $viewException = new ModelException($e->getMessage(), 500);
             $viewException->display();
         }

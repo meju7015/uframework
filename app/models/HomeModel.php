@@ -7,10 +7,21 @@ class HomeModel extends Model
     public function selectUsers($userID)
     {
         $this->builder
-            ->column('*')
+            ->table('Users')
+            ->column(
+                Array(
+                    'User',
+                    'Password'
+                )
+            )
             ->where(
-                Array('User', '=', 'root'),
-                Array('Password', '=', '')
+                Array(
+                    Array('User', '=', 'root'),
+                    Array('Password', '=', ''),
+                )
+            )
+            ->whereOr(
+                Array('Email', '=', '*')
             )
             ->find();
     }
