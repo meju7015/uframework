@@ -60,6 +60,10 @@ class Router
         $this->request = $request['REQUEST_URI'];
         $this->debug = $debug;
 
+        if (empty($this->request) && isset($request['argv'])) {
+            $this->request = $request['argv'][1];
+        }
+
         if ($debug === true) {
             $this->setDebug();
         }
@@ -208,6 +212,16 @@ class Router
 
         $this->routes[$parseUri] =  Array(
             'method'     => 'get',
+            'controller' => $controller
+        );
+
+        return $this;
+    }
+
+    public function command($target, $controller)
+    {
+        $this->routes[$target] = Array(
+            'method'     => 'command',
             'controller' => $controller
         );
 

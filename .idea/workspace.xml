@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fcae2d5-1568-499e-8079-e68cf823aa19" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/libraries/Bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/libraries/Bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/libraries/UDebug.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/libraries/UDebug.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/HomeModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/HomeModel.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +87,7 @@
       <workItem from="1569801506956" duration="412000" />
       <workItem from="1569801948020" duration="1596000" />
       <workItem from="1569804078229" duration="1048000" />
-      <workItem from="1569805192003" duration="5650000" />
+      <workItem from="1569805192003" duration="7878000" />
     </task>
     <task id="LOCAL-00001" summary="컨트롤러 인터페이스 정의">
       <created>1569296447436</created>
@@ -185,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569806875537</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="README 수정">
+      <created>1569810861413</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1569810861413</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +227,7 @@
     <MESSAGE value="UDebugger 시작" />
     <MESSAGE value="UDebugger" />
     <MESSAGE value="UDebugger README" />
-    <option name="LAST_COMMIT_MESSAGE" value="UDebugger README" />
+    <MESSAGE value="README 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="README 수정" />
   </component>
 </project>
