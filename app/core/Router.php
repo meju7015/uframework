@@ -159,8 +159,6 @@ class Router
             $split = explode('.', $router['controller']);
 
             if (file_exists($this->rootDir."/app/controllers/{$split[0]}.php")) {
-                include_once $this->rootDir."/app/controllers/{$split[0]}.php";
-
                 if (strtoupper($router['method']) !== $_SERVER['REQUEST_METHOD']) {
                     throw new RouteException('not found method', 405);
                 }
@@ -179,15 +177,13 @@ class Router
                 $controller = new $split[0];
                 if (method_exists($controller, $split[1])) {
 
-                    UDebug::store($router, 'router');
-
-                    UDebug::store($methodArgv, $router['method']);
-
-                    UDebug::store(Array(
-                        'controller' => $split[0],
-                        'function' => $split[1],
-                        'path' => $this->rootDir."/app/controllers/{$split[0]}.php"
-                    ), 'controller');
+                    UDebug::store($router, 'router')
+                        ->store($methodArgv, $router['method'])
+                        ->store(Array(
+                            'controller' => $split[0],
+                            'func' => $split[1],
+                            'path' => $this->rootDir."/app/controllers/{$split[0]}.php"
+                        ), 'controller');
 
                     $controller->$split[1]($methodArgv, $this->argv);
                 } else {
@@ -199,6 +195,13 @@ class Router
         }
     }
 
+    /**
+     * GET 요청 라우터 생성
+     *
+     * @param $uri
+     * @param $controller
+     * @return $this
+     */
     public function get($uri, $controller)
     {
         $parseUri = $this->parseUri($uri);
@@ -211,6 +214,12 @@ class Router
         return $this;
     }
 
+    /**
+     * POST 요청 라우터 생성
+     *
+     * @param $uri
+     * @param $controller
+     */
     public function post($uri, $controller)
     {
         $parseUri = $this->parseUri($uri);
@@ -221,16 +230,28 @@ class Router
         );
     }
 
+    /**
+     * PUT 요청 라우터 생성
+     * (필요에 따라 구현하여 사용.)
+     */
     public function put()
     {
 
     }
 
+    /**
+     * PUT 요청 라우터 생성
+     * (필요에 따라 구현하여 사용.)
+     */
     public function delete()
     {
 
     }
 
+    /**
+     * PUT 요청 라우터 생성
+     * (필요에 따라 구현하여 사용.)
+     */
     public function option()
     {
 

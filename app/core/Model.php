@@ -72,7 +72,6 @@ class Model
                 'path'  => $modelFile
             ), 'model');
 
-            include_once $modelFile;
             return new $model();
         } else {
             throw new ModelException('모델 파일을 찾을 수 없습니다.', 405);

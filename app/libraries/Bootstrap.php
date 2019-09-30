@@ -39,7 +39,9 @@ class BootStrap
             "app/interface/",
             "app/exceptions/",
             "app/core/",
-            "app/libraries/"
+            "app/libraries/",
+            "app/controllers/",
+            "app/models/"
         );
 
         foreach ($path as $key => $item) {

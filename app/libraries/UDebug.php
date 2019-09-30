@@ -14,6 +14,8 @@ class UDebug
         } else {
             self::$trace[] = $data;
         }
+
+        return new static;
     }
 
     public static function pop()
@@ -23,7 +25,7 @@ class UDebug
 
     public static function display()
     {
-        echo '<pre style="position:relative; width:100%; top:0; height: 300px; padding:10px; background-color:#282828; color:greenyellow; z-index:9999">';
+        echo '<pre style="position:relative; width:100%; top:0; height: 300px; padding:10px; background-color:#282828; color:greenyellow; z-index: 9999; overflow: auto;">';
         print_r(self::$trace);
         echo '</pre>';
     }

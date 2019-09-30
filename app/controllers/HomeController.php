@@ -11,7 +11,6 @@ class HomeController extends Controller implements Controllable
             'test' => 'test'
         );
 
-
         $HomeModel = $this->model->loadModel('HomeModel');
         $HomeModel->selectUsers('root');
 

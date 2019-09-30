@@ -1,10 +1,41 @@
 # UFramework
-PHP 5.4 이하에서 사용할수 있는 Nano Framework
-
 - 기본 캐릭터셋은 EUC-KR 입니다. 
 - MVC 패턴과 메소드 체이닝 패턴을 이용했습니다.
 - jQuery 미사용 request 라이브러리를 포함합니다.
 - UDebug 추가되었습니다.
+
+## About
+<strong>PHP 5.1.4</strong> 이상에서 사용할수 있는 Nano Framework<br>
+
+## Infomation
+- Bootstrap.php 의 autoLoad() function 의 변수중, $path 에 해당하는 배열 순서를 변경하지 마세요.
+
+## Install
+1. Apache vhost.conf
+```apacheconfig
+<VirtualHost *:80>
+    ServerName uframework.com
+    DocumentRoot ~/uframework/public
+</VirtualHost>
+```
+
+2. Apache httpd.conf
+```apacheconfig
+<Directory "~/uframework/public">
+    AllowOverride All
+</Directory>
+```
+
+2. Bootstrap.php<br>
+데이터베이스 커넥터 정보를 입력합니다.
+(LOCAL_CHANEL, DEVELOPE_CHANEL, PRODUCT_CHANEL) Default 는 프로덕트 채널입니다.
+```PHP
+public function __constracut()
+{
+    $this->rootDir = Config::getRootDir();
+    DBConfig::setDatabaseInfo(LOCAL_CHANEL);
+}
+```
 
 ## UDebug
 디버그 클래스 입니다. 기본적으로 session, get/post, router, controller, model 등의
