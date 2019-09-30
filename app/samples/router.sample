@@ -1,6 +1,6 @@
 <?php
 ${{router}} = new Router($_SERVER);
 
-${{router}}->('{{router}}/index', '{{controller}}.index');
+${{router}}->get('/{{routeName}}/index', '{{controller}}.index');
 
-//${{router}}->run();
+//${{router}}->run(); 주석 제거후 실제 동작합니다.

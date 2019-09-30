@@ -172,9 +172,9 @@ class Router
 
             if (file_exists($this->rootDir."app/controllers/{$split[0]}.php")) {
 
-                /*if (strtoupper($router['method']) !== $_SERVER['REQUEST_METHOD']) {
+                if (strtoupper($router['method']) !== strtoupper($_SERVER['REQUEST_METHOD'])) {
                     throw new RouteException('not found method', 405);
-                }*/
+                }
 
                 $methodArgv = $_GET;
 
@@ -191,6 +191,7 @@ class Router
                 }
 
                 $controller = new $split[0];
+
                 if (method_exists($controller, $split[1])) {
 
                     UDebug::store($router, 'router')

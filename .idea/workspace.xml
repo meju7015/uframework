@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fcae2d5-1568-499e-8079-e68cf823aa19" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/MakeController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/samples/model.sample" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/samples/router.sample" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/exception/common.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/MakeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/MakeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/basic/exception/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/basic/exception/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/basic/exception/405.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/basic/exception/405.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/basic/exception/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/basic/exception/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/samples/router.sample" beforeDir="false" afterPath="$PROJECT_DIR$/app/samples/router.sample" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/CommandRoute.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/CommandRoute.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -106,7 +101,10 @@
       <workItem from="1569804078229" duration="1048000" />
       <workItem from="1569805192003" duration="7878000" />
       <workItem from="1569816272307" duration="49000" />
-      <workItem from="1569816361015" duration="5625000" />
+      <workItem from="1569816361015" duration="5919000" />
+      <workItem from="1569822725566" duration="931000" />
+      <workItem from="1569823697068" duration="879000" />
+      <workItem from="1569824625500" duration="199000" />
     </task>
     <task id="LOCAL-00001" summary="컨트롤러 인터페이스 정의">
       <created>1569296447436</created>
@@ -220,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569816314372</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="commander 업로드">
+      <created>1569822418549</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1569822418549</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +268,7 @@
     <MESSAGE value="UDebugger README" />
     <MESSAGE value="README 수정" />
     <MESSAGE value="Commander 시작" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commander 시작" />
+    <MESSAGE value="commander 업로드" />
+    <option name="LAST_COMMIT_MESSAGE" value="commander 업로드" />
   </component>
 </project>
