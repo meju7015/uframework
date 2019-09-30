@@ -172,7 +172,7 @@ class Router
 
             if (file_exists($this->rootDir."app/controllers/{$split[0]}.php")) {
 
-                if (strtoupper($router['method']) !== strtoupper($_SERVER['REQUEST_METHOD'])) {
+                if ($router['method'] != 'commend' && strtoupper($router['method']) !== strtoupper($_SERVER['REQUEST_METHOD'])) {
                     throw new RouteException('not found method', 405);
                 }
 
@@ -237,8 +237,6 @@ class Router
             'method'     => 'command',
             'controller' => $controller
         );
-
-        $_SERVER['REQUEST_METHOD'] = 'command';
 
         return $this;
     }

@@ -65,24 +65,24 @@ UDebug::display();
 1. 컨트롤러 생성
 /app/controllers/ 디렉토리에 {controllerName}Controller.php 의 이름으로 생성됩니다. 
 ```SH
->php command make:controller {controllerName}
+php command make:controller {controllerName}
 ```
 
 2. 라우터 생성
 /routes/ 디렉토리에 {routerName}Route.php 의 이름으로 생성됩니다.<br>
 {controllerName}을 입력하면 해당 라우터를 컨트롤러 이름으로 바인딩 시켜주지만 입력하지 않아도 기본 라우터 이름을 따라갑니다.
 ```SH
->php command make:router {routerName} {controllerName = routerName}
+php command make:router {routerName} {controllerName = routerName}
 ```
 
 3. 모델 생성
 /app/models/ 디렉토리에 {modelName}Model.php 의 이름으로 생성됩니다.
 ```SH
->php command make:model {modelName}
+php command make:model {modelName}
 ```
 
 4. 페이지를 한번에 생성
 컨트롤러/모델/라우터가 각각 생성됩니다.
 ```SH
->php command make:all {controllerName}
+php command make:all {controllerName}
 ```
