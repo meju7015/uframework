@@ -1,4 +1,5 @@
 <?php
+
 /**
  * JSON datatype output
  */

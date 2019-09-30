@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: admin
@@ -74,7 +75,8 @@ class View
 
         $this->data = Array(
             'head' => $this->head,
-            'session' => ''
+            'session' => '',
+            'debug' => UDebug::pop()
         );
     }
 

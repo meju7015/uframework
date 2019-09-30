@@ -1,9 +1,7 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: admin
- * Date: 2019-09-19
- * Time: 오후 5:49
+ * 모델 클래스
  */
 class Model
 {
@@ -69,6 +67,11 @@ class Model
         $modelFile = "{$this->rootDir}app/models/{$model}.php";
 
         if (file_exists($modelFile)) {
+            UDebug::store(Array(
+                'model' => $model,
+                'path'  => $modelFile
+            ), 'model');
+
             include_once $modelFile;
             return new $model();
         } else {

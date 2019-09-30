@@ -1,4 +1,5 @@
 <?php
+
 /**
  * 라우팅 클래스
  * 5.4 이하 버전용
@@ -177,6 +178,17 @@ class Router
 
                 $controller = new $split[0];
                 if (method_exists($controller, $split[1])) {
+
+                    UDebug::store($router, 'router');
+
+                    UDebug::store($methodArgv, $router['method']);
+
+                    UDebug::store(Array(
+                        'controller' => $split[0],
+                        'function' => $split[1],
+                        'path' => $this->rootDir."/app/controllers/{$split[0]}.php"
+                    ), 'controller');
+
                     $controller->$split[1]($methodArgv, $this->argv);
                 } else {
                     throw new RouteException('Method 를 찾을 수 없습니다.', 405);

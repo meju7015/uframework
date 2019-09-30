@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: admin
@@ -46,10 +47,11 @@ class QueryBuilder
 
     public function find()
     {
-        echo '<pre style="background-color:black; color:greenyellow;margin:0;padding:10px;">';
-        print_r($this);
-        echo '</pre>';
+        UDebug::store((array)$this);
+        UDebug::display();;
+
         // TODO :: find 에서는 select 를 이용하기때문에 slave쪽으로 보내는것을 기본값으로.
+        // TODO :: 쿼리가 실행되면 UDebug 에 lastQuery 입력해줄것.
         // 사용 하는 메소드 where, column, order, lomit, join, and
 
         try {
@@ -76,8 +78,6 @@ class QueryBuilder
 
             $viewException->display();
         }
-
-
     }
 
     public function findAll()
