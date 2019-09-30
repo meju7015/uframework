@@ -2,7 +2,8 @@
 - 기본 캐릭터셋은 EUC-KR 입니다. 
 - MVC 패턴과 메소드 체이닝 패턴을 이용했습니다.
 - jQuery 미사용 request 라이브러리를 포함합니다.
-- UDebug 추가되었습니다.
+- UDebug 가 추가되었습니다.
+- Command 가 추가되었습니다.
 
 ## About
 <strong>PHP 5.1.4</strong> 이상에서 사용할수 있는 Nano Framework<br>
@@ -55,4 +56,33 @@ UDebug::pop();
 아래 메소드를 이용하여 현재 입력된 모든 디버깅 정보와 트레이스 정보를 얻을수 있습니다.
 ```PHP
 UDebug::display();
+```
+
+## Command
+서버에서 직접 호출 가능한 command 를 추가했습니다.<br>
+크론 작업 및 컨트롤러/모델/라우터 생성 및 제거기능을 포함합니다.<br><br>
+
+1. 컨트롤러 생성
+/app/controllers/ 디렉토리에 {controllerName}Controller.php 의 이름으로 생성됩니다. 
+```SH
+>php command make:controller {controllerName}
+```
+
+2. 라우터 생성
+/routes/ 디렉토리에 {routerName}Route.php 의 이름으로 생성됩니다.<br>
+{controllerName}을 입력하면 해당 라우터를 컨트롤러 이름으로 바인딩 시켜주지만 입력하지 않아도 기본 라우터 이름을 따라갑니다.
+```SH
+>php command make:router {routerName} {controllerName = routerName}
+```
+
+3. 모델 생성
+/app/models/ 디렉토리에 {modelName}Model.php 의 이름으로 생성됩니다.
+```SH
+>php command make:model {modelName}
+```
+
+4. 페이지를 한번에 생성
+컨트롤러/모델/라우터가 각각 생성됩니다.
+```SH
+>php command make:all {controllerName}
 ```
