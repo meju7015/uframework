@@ -1,0 +1,6 @@
+<?php
+${{router}} = new Router($_SERVER);
+
+${{router}}->('{{router}}/index', '{{controller}}.index');
+
+//${{router}}->run();

@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fcae2d5-1568-499e-8079-e68cf823aa19" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/MakeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/samples/model.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/samples/router.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/exception/common.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/basic/exception/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/basic/exception/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/basic/exception/405.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/basic/exception/405.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/basic/exception/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/basic/exception/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/CommandRoute.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/CommandRoute.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +29,7 @@
       <list>
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -29,11 +37,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1RGbPI3U09nAGQ9F6AxzdMZvFZk" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/dist" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/samples" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -42,9 +55,13 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\web\uframework\app\samples" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\web\uframework\app\libraries" />
       <recent name="C:\web\uframework\public\css\bootstrap" />
@@ -88,6 +105,8 @@
       <workItem from="1569801948020" duration="1596000" />
       <workItem from="1569804078229" duration="1048000" />
       <workItem from="1569805192003" duration="7878000" />
+      <workItem from="1569816272307" duration="49000" />
+      <workItem from="1569816361015" duration="5625000" />
     </task>
     <task id="LOCAL-00001" summary="컨트롤러 인터페이스 정의">
       <created>1569296447436</created>
@@ -187,7 +206,21 @@
       <option name="project" value="LOCAL" />
       <updated>1569810861413</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Commander 시작">
+      <created>1569816304278</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1569816304278</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Commander 시작">
+      <created>1569816314372</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1569816314372</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +250,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="컨트롤러 인터페이스 정의" />
     <MESSAGE value="404/405 Exception view" />
     <MESSAGE value="ViewException" />
@@ -228,6 +262,7 @@
     <MESSAGE value="UDebugger" />
     <MESSAGE value="UDebugger README" />
     <MESSAGE value="README 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="README 수정" />
+    <MESSAGE value="Commander 시작" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commander 시작" />
   </component>
 </project>

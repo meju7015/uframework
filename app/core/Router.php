@@ -57,25 +57,28 @@ class Router
     public function __construct(Array $request, $debug = false)
     {
         $this->rootDir = Config::getRootDir();
-        $this->request = $request['REQUEST_URI'];
-        $this->debug = $debug;
 
-        if (empty($this->request) && isset($request['argv'])) {
+        if (isset($request['REQUEST_URI'])) {
+            $this->request = $request['REQUEST_URI'];
+            $this->debug = $debug;
+        } elseif (empty($this->request) && isset($request['argv'])) {
             $this->request = $request['argv'][1];
         }
 
         if ($debug === true) {
-            $this->setDebug();
+            $this->setDebug(E_ALL);
+        } else {
+            $this->setDebug(E_ERROR);
         }
     }
 
     /**
      * 디버깅 세팅
      */
-    public function setDebug()
+    public function setDebug($level)
     {
         $this->debug = true;
-        error_reporting(E_ALL);
+        error_reporting($level);
     }
 
     /**
@@ -135,11 +138,11 @@ class Router
 
         for ($i = 0; $i < sizeof($requestList); $i++) {
 
-            $slice = array_slice($requestList, 0, sizeof($requestList)-$i);
+            $slice = array_slice($requestList, 0, sizeof($requestList) - $i);
             $sliceString = implode('/', $slice);
 
             if ($sliceString[0] !== '/') {
-                $sliceString = '/'.$sliceString;
+                $sliceString = '/' . $sliceString;
             }
 
             if ($key = array_key_exists($sliceString, $this->routes)) {
@@ -149,6 +152,11 @@ class Router
 
                 return $this->routes[$sliceString];
             }
+        }
+
+        // 커맨드로 접근할때. 예외처리.
+        if (array_key_exists($uri, $this->routes)) {
+            return $this->routes[$uri];
         }
 
         return false;
@@ -162,10 +170,11 @@ class Router
         if ($router = $this->hasRoute($this->request)) {
             $split = explode('.', $router['controller']);
 
-            if (file_exists($this->rootDir."/app/controllers/{$split[0]}.php")) {
-                if (strtoupper($router['method']) !== $_SERVER['REQUEST_METHOD']) {
+            if (file_exists($this->rootDir."app/controllers/{$split[0]}.php")) {
+
+                /*if (strtoupper($router['method']) !== $_SERVER['REQUEST_METHOD']) {
                     throw new RouteException('not found method', 405);
-                }
+                }*/
 
                 $methodArgv = $_GET;
 
@@ -175,6 +184,9 @@ class Router
                         break;
                     case OAUTH_HTTP_METHOD_POST :
                         $methodArgv = $_POST;
+                        break;
+                    case 'command' :
+                        $methodArgv = $_SERVER['argv'];
                         break;
                 }
 
@@ -224,6 +236,8 @@ class Router
             'method'     => 'command',
             'controller' => $controller
         );
+
+        $_SERVER['REQUEST_METHOD'] = 'command';
 
         return $this;
     }

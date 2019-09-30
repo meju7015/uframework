@@ -1,0 +1,8 @@
+<?php
+class {{controller}} extends {{extends}} implements {{implements}}
+{
+    public function index($request, $params)
+    {
+        return true;
+    }
+}
