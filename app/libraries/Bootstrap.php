@@ -28,6 +28,9 @@ class BootStrap
 
             include_once $routerPath.$item;
         }
+
+
+        Router::run($_SERVER, false);
     }
 
     private function autoLoad()

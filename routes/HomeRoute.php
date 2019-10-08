@@ -1,16 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 2019-09-20
- * Time: ¿ÀÈÄ 3:58
- */
-$homeRouter = new Router($_SERVER, true);
 
-$homeRouter
-    ->get('/', 'HomeController.index')
-    ->get('/homes', 'HomeController.homes')
-    ->get('/blog', 'HomeController.blog')
-    ->post('/api', 'HomeController.index');
+Router::get('/', 'HomeController.index')
+    ->get('/home', 'HomeController.homes');
 
-$homeRouter->run();
+Router::post('/login', 'HomeController.login');
